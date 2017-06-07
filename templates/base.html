@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+    <title>
+        {% block title %}
+
+        {% endblock %}
+    </title>
+    <link rel="stylesheet" href="{{ url_for ('static' ,filename='style.css') }}">
+    </head>
+    <body>
+        <header class="Rectangle-1">
+            <a href="home.html"><img src="/static/logo1.png" alt="home link" width="150" height="91" class="logo"></a>
+            <div CLASS="header-tekst">
+                <a href="kamers.html" class="header-text">KAMERS </a>
+                <a href="instellingen.html" class="header-text">INSTELLINGEN</a>
+                <a href="muziek.html" class="header-text">MUZIEK</a>
+            </div>
+        </header>
+        {% block body %}{% endblock %}
+        <footer class="Rectangle-2">
+            <div class="footer-box">
+                <p class="homealone">&copy; Home Alone</p>
+                <p class="menu">
+                    Menu
+                    |
+                        <a href="home.html">Home</a>
+                    |
+                        <a href="kamers.html">Kamers</a>
+                    |
+                        <a href="instellingen.html">Instellingen</a>
+                    |
+                        <a href="muziek.html">Muziek</a>
+                </p>
+            </div>
+        </footer>
+    </body>
+</html>

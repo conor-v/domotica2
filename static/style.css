@@ -1,0 +1,72 @@
+/*$$$$$$$$$$$$$$$$$
+    ALGEMEEN
+$$$$$$$$$$$$$$$$$*/
+
+body {
+  margin: 0;
+}
+
+
+
+/*$$$$$$$$$$$$
+    LINKS
+$$$$$$$$$$$$*/
+
+a:link {
+  text-decoration: none;
+}
+
+a {
+  color: whitesmoke;
+}
+
+a:hover{
+  color: greenyellow;
+}
+
+
+
+/*$$$$$$$$$$$$$$$$$$$$$$$$$
+     BASE.HTML(EXTENDS)
+$$$$$$$$$$$$$$$$$$$$$$$$$*/
+
+.Rectangle-1 {
+  background-color: #3a2d2d;
+  color: whitesmoke;
+}
+
+.header-tekst {
+  float: right;
+  padding-top: 50px;
+  padding-right: 120px;
+}
+
+.header-text {
+  padding-right: 75px;
+  font-size: 25px;
+}
+
+.Rectangle-2 {
+  height: 65px;
+  background-color: #3a2d2d;
+  color: whitesmoke;
+  margin-top: 545px;
+}
+
+.footer-box {  
+  margin-left: 8px;
+}
+
+.logo {
+  padding: 15px 25px;
+}
+
+
+
+/*$$$$$$$$$$$$$$$$
+    HOME.HTML
+$$$$$$$$$$$$$$$$*/
+
+.homefoto {
+   box-shadow: inset 10px 10px 10px 10px #000; /*werkt niet*/
+}
