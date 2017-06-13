@@ -1,5 +1,9 @@
 from flask import Flask, render_template
-import datetime
+from dbconn import DbConnection as DBclass
+from mcp import mpc
+
+
+
 app = Flask(__name__)
 
 @app.route("/")
@@ -12,11 +16,17 @@ def home():
 
 @app.route("/kamers.html")
 def kamers():
-    return render_template('kamers.html')
+    db = DBclass
+    instance_mcp = mpc()
+    temp = instance_mcp.bepaal_temperatuur(7)
+    licht = instance_mcp.bepaal_percentage_licht(0)
+    # db.execute("INSERT INTO temperatuur(tijd, graden) values(NOW(), '{param}')",param=temp)
 
-@app.route("/Ktoevoegen.html")
-def ktoevoegen():
-    return render_template('ktoevoegen.html')
+    return render_template('kamers.html', temp=temp, licht=licht)
+
+@app.route("/toevoegen.html")
+def toevoegen():
+    return render_template('toevoegen.html')
 
 @app.route("/instellingen.html")
 def instellingen():

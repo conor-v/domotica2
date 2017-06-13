@@ -3,10 +3,10 @@ class DbClass:
         import mysql.connector as connector
 
         self.__dsn = {
-            "host": "HostnameHere",
-            "user": "UserNameHere",
-            "passwd": "PasswdHere",
-            "db": "DBNameHere"
+            "host": "localhost",
+            "user": "flaskuser",
+            "passwd": "flaskpassword",
+            "db": "ENMDatabase"
         }
 
         self.__connection = connector.connect(**self.__dsn)
@@ -14,7 +14,7 @@ class DbClass:
 
     def getDataFromDatabase(self):
         # Query zonder parameters
-        sqlQuery = "SELECT * FROM tablename"
+        sqlQuery = "SELECT * FROM temperatuur"
         
         self.__cursor.execute(sqlQuery)
         result = self.__cursor.fetchall()
@@ -23,7 +23,7 @@ class DbClass:
 
     def getDataFromDatabaseMetVoorwaarde(self, voorwaarde):
         # Query met parameters
-        sqlQuery = "SELECT * FROM tablename WHERE columnname = '{param1}'"
+        sqlQuery = "SELECT * FROM temperatuur WHERE graden = '{1}'"
         # Combineren van de query en parameter
         sqlCommand = sqlQuery.format(param1=voorwaarde)
         
@@ -41,3 +41,4 @@ class DbClass:
         self.__cursor.execute(sqlCommand)
         self.__connection.commit()
         self.__cursor.close()
+

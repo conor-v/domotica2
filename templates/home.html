@@ -1,9 +1,23 @@
 {% extends 'base.html' %}
 {% block title   %}
-    <title>home</title>
+    home
 {% endblock %}
 
 
 {% block body %}
-    <img src="/static/achter%20grond.png" alt="achtergrond foto" width="1520" class="homefoto">
+
+    <div class="container">
+        <div class="box1">
+            <a href="kamers.html"><img src="/static/.png" alt="kamers-link" class="foto"width="170" height="170"></a>
+            <p>kamers</p>
+        </div>
+        <div class="box1">
+            <a href="instellingen.html"><img src="/static/instellingen%20icon.png" alt="instellingen-link" class="foto"width="170" height="170"></a>
+            <p>instellingen</p>
+        </div>
+        <div class="box1">
+            <a href="muziek.html"><img src="/static/muziek-foto.png" alt="muziek-link" class="foto"></a>
+            <p>muziek</p>
+        </div>
+    </div>
 {% endblock %}

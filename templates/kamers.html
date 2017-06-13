@@ -1,8 +1,86 @@
 {% extends 'base.html' %}
 {% block title   %}
-    <title>home</title>
+    kamers
 {% endblock %}
 
 {% block body %}
-
+    <a href="toevoegen.html"><img src="/static/toevoegen.png" alt="link naar ktoevoegen" class="toevoegen"></a>
+    <p class="lijnen">gelijksvloers _______________________________________________________________________________________________________________________________________</p>
+    <div class="kamer-box">
+        <img src="/static/slaapkamer.png" alt="slaapkamer foto" class="kamerfoto" >
+        <p>slaapkamer 1</p>
+        <p>licht: {{ licht }} Volt</p>
+        <p>temp: {{ temp }} °C</p>
+        verlichhting:
+        <label class="switch">
+            <input type="checkbox" checked/>
+            <div class="slider round"></div>
+        </label>
+        <br><br><br>
+    </div>
+    <div class="garage-box">
+        <img src="/static/garage.png" alt="garage foto" class="kamerfoto" width="127" height="77">
+        <p>garage</p>
+        <p>licht: {{ licht }} Volt</p>
+        <p>temp: {{ temp }} °C</p>
+        verlichting:
+        <label class="switch">
+            <input type="checkbox" checked />
+            <div class="slider round"></div>
+        </label> <br><br>
+        garage-poort:
+        <label class="switch">
+            <input type="checkbox" checked />
+            <div class="slider round"></div>
+        </label>
+    </div>
+    <div class="kamer-box">
+        <img src="/static/slaapkamer.png" alt="slaapkamer foto" class="kamerfoto">
+        <p>slaapkamer 2</p>
+        <p>licht: n/a</p>
+        <p>temp: n/a</p>
+        verlichting:
+        <label class="switch">
+            <input type="checkbox" checked />
+            <div class="slider round"></div>
+        </label>
+        <br><br><br>
+    </div>
+    <p class="lijnen">1ste verdiep _______________________________________________________________________________________________________________________________________</p>
+     <div class="kamer-box">
+        <img src="/static/office.png" alt="office foto" class="kamerfoto" width="127" height="77">
+         <p>bureau </p>
+        <p>licht: {{ licht }} Volt</p>
+        <p>temp: {{ temp }} °C</p>
+        verlichhting:
+        <label class="switch">
+            <input type="checkbox" checked />
+            <div class="slider round"></div>
+        </label>
+    </div>
+     <div class="kamer-box">
+        <img src="/static/slaapkamer.png" alt="slaapkamer foto" class="kamerfoto" >
+         <p>slaapkamer 3</p>
+        <p>licht: {{ licht }} Volt</p>
+        <p>temp: {{ temp }} °C</p>
+        verlichhting:
+        <label class="switch">
+            <input type="checkbox" checked />
+            <div class="slider round"></div>
+        </label>
+    </div>
+     <div class="kamer-box">
+        <img src="/static/keuken.png" alt="keuken foto" class="kamerfoto" width="127" height="77">
+         <p>keuken</p>
+        <p>licht: n/a</p>
+        <p>temp: n/a</p>
+        verlichhting:
+        <label class="switch">
+            <input type="checkbox" checked />
+            <div class="slider round"></div>
+        </label>
+    </div>
 {% endblock %}
+
+
+

@@ -1,8 +1,34 @@
 {% extends 'base.html' %}
 {% block title   %}
-    <title>instellingen</title>
+    instellingen
 {% endblock %}
 
 {% block body %}
-
+    <div class="schuiver">
+        <h3>licht demping</h3>
+        <input type="range" id="myRange" value="90" title="slider">
+        <p>klik op de knop als je de waarden van de slider wilt weten.</p>
+        <button onclick="myFunction()">Try it</button>
+        <p id="demo"></p>
+    </div>
+     <div class="schuiver">
+    ???:
+        <label class="switch">
+            <input type="checkbox" checked />
+            <div class="slider round"></div>
+        </label>
+    </div>
+     <div class="schuiver">
+    ???:
+        <label class="switch">
+            <input type="checkbox" checked />
+            <div class="slider round"></div>
+        </label>
+    </div>
+<script>
+    function myFunction() {
+        var x = document.getElementById("myRange").value;
+        document.getElementById("demo").innerHTML = x;
+    }
+</script>
 {% endblock %}
