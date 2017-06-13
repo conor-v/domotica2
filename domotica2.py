@@ -19,10 +19,13 @@ def kamers():
     db = DBclass
     instance_mcp = mpc()
     temp = instance_mcp.bepaal_temperatuur(7)
-    licht = instance_mcp.bepaal_percentage_licht(0)
+    licht0 = instance_mcp.bepaal_percentage_licht(0)
+    licht1 = instance_mcp.bepaal_percentage_licht(1)
+    licht2 = instance_mcp.bepaal_percentage_licht(2)
+    licht3 = instance_mcp.bepaal_percentage_licht(3)
     # db.execute("INSERT INTO temperatuur(tijd, graden) values(NOW(), '{param}')",param=temp)
 
-    return render_template('kamers.html', temp=temp, licht=licht)
+    return render_template('kamers.html', temp=temp, licht0=licht0, licht1=licht1, licht2=licht2, licht3=licht3)
 
 @app.route("/toevoegen.html")
 def toevoegen():
