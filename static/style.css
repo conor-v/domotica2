@@ -19,11 +19,11 @@ a:link {
 }
 
 a {
-  color: whitesmoke;
+  color: #FA8779;
 }
 
 a:hover{
-  color: greenyellow;
+  color: red;
 }
 
 
@@ -59,17 +59,21 @@ $$$$$$$$$$$$$$$$$$$$$$$$$*/
 }
 
 .footer-box {  
-  margin-left: 8px;
+  margin-left: 50px;
+  display: inline-flex;
 }
 
 .logo {
   padding: 15px 25px;
 }
 
-.menu {
-    margin-top: -8px;
+.homealone {
+  float: left;
 }
 
+.wordpress {
+  margin-left: 750px;
+}
 
 
 /*$$$$$$$$$$$$$$$$
@@ -92,10 +96,13 @@ $$$$$$$$$$$$$$$$*/
   text-align: center;
   margin: 150px 105px;
   border-radius: 15%;
+  border: red dotted 2px;
 }
 
 .foto {
-  margin-top: 8px;
+  margin-top: 37px;
+  width: 120px;
+  height: 120px;
 }
 
 
@@ -220,24 +227,4 @@ $$$$$$$$$$$$$$$$$$$$$$$*/
 
 
 
-/*$$$$$$$$$$$$$$$$$$
-    TOEVOEGEN
-$$$$$$$$$$$$$$$$$$*/
-
-.naam {
-  border: 1px solid black;
-}
-
-.kamertoevoegen {
-  margin: 40px 0 20px 550px;
-  display: inline-block;
-  border: solid 1px black;
-  padding: 10px 50px;
-  width: 300px;
-}
-
-.float {
-  padding: 10px 0;
-  display: inline-block;
-}
 

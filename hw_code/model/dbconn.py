@@ -6,7 +6,7 @@ class DbConnection:
             "host": "localhost",
             "user": "flaskuser",
             "passwd": "flaskpassword",
-            "db": "ENMDatabase"
+            "db": database,
         }
         self.__connection = connector.connect(**self.__dsn)
 
@@ -15,7 +15,12 @@ class DbConnection:
     # met query(..., return_dict=True) krijg je een dictionary terug,
     # dat vermindert de kans op fouten (zeker bij SELECT * FROM..)
     def query(self, query: str, data: dict = None, dictionary=False):
-        cursor = self.__connection.cursor(dictionary=dictionary)
+        try:
+            cursor = self.__connection.cursor(dictionary=dictionary)
+        except TypeError:
+            print("De optie 'dictionary vereist mysql-connector v2.x.x, kan je installeren met: \n "
+                  "sudo pip3 install mysql-connector==2.1.4")
+            cursor = self.__connection.cursor()
         cursor.execute(query, data)
         result = cursor.fetchall()
         cursor.close()
@@ -29,4 +34,6 @@ class DbConnection:
         self.__connection.commit()
         cursor.close()
         return result
+
+
 

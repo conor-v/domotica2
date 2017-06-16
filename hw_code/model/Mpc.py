@@ -2,16 +2,16 @@ from RPi import GPIO
 import spidev
 import time
 
-class mpc:
+class Mpc:
 
-    def __init__(self, spi_busnummer =0, spi_apparaat_nummer=0):#RBP heeft maar 1 bus, en maar 1 naar buitengebrachte apparaat
+    def __init__(self, spi_busnummer: object = 0, spi_apparaat_nummer: object = 0) -> object:#RBP heeft maar 1 bus, en maar 1 naar buitengebrachte apparaat
         self.__spi = spidev.SpiDev()                            #creeert een spi instantie
         self.__spi.open(spi_busnummer, spi_apparaat_nummer)     #openent de instanite
 
     def lees_kanaal_uit(self, kanaal):
         # instructie om waarde van het kanaal in te kunnen lezen
         # 1: de start code (0b00000001)
-        # 8 + kanaal <<4: 8 om de byte te doen beginnen met 1, + kanaal voor het juiste kanaal, en 4 shiften om ze in het bigin van de byte te krijgen
+        # 8 + kanaal <<4: 8 om de byte te doen beginnen met 1, + kanaal voor het juiste kanaal, en 4 shiften om ze in het begin van de byte te krijgen
         # 0: de don't care bit's, mag elke random byte zijn
         adc_data = self.__spi.xfer2([1, (8 + kanaal) << 4, 0])
 

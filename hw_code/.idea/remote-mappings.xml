@@ -6,7 +6,7 @@
         <remote-mappings server-id="python@sftp://conor@169.254.10.1:22/usr/bin/python3">
           <settings>
             <list>
-              <mapping local-root="$PROJECT_DIR$" remote-root="/home/conor/Documents/homeAlone" />
+              <mapping local-root="$PROJECT_DIR$" remote-root="/home/conor/hw_code" />
             </list>
           </settings>
         </remote-mappings>
