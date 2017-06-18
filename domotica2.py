@@ -2,7 +2,6 @@ from flask import Flask, render_template, redirect, request
 from hw_code.model.dbconn import DbConnection
 
 db = DbConnection('db_domotica')
-# db = DbConnection
 app = Flask(__name__)
 
 
@@ -11,15 +10,14 @@ def begin():
     return render_template('home.html')
 
 
-@app.route("/home.html")
+@app.route("/home")
 def home():
     return render_template('home.html')
 
 
-@app.route("/kamers.html", methods=["GET", "POST"])
+@app.route("/kamers", methods=["GET", "POST"])
 def sensoren():
     db = DbConnection('db_domotica')
-
     query = "select current_light_precent from kamers;"
     light = db.query(query)
     lichtwaarden = []
@@ -34,24 +32,35 @@ def sensoren():
         for x in test:
             tempwaarden.append(x)
 
-    # if request.method == "POST":
-        # drukknop_l = request.form['lamp_status']
+    db = DbConnection('db_domotica')
+    if request.method == "POST":
+        button_id = request.form['button_id']
         # drukknop_g = request.form['garage']
-    # query3 = "UPDATE db.kamers SET lamp_status  WHERE id = 1;"
-        # query4 = "UPDATE garage SET status = '1' OR '0' WHERE 'drukknop_g' == PUSHED;"
-    db.execute("SELECT * FROM kamers WHERE id = '1'; UPDATE kamers  WHERE lamp_status=1", "SET lamp_status=0")
-        # db.execute(query4, drukknop_g)
+        query3 = "select lamp_status from kamers WHERE id = " + button_id + ";"
+        query4 = "UPDATE kamers SET lamp_status=1  WHERE lamp_status=0 ;"
+        query5 = "UPDATE kamers SET lamp_status=0 WHERE lamp_status=1 ;"
+        query6 = "UPDATE garage SET  WHERE id = 1;"
+        lamp_status_result = db.query(query3)
+        lamp_status_list = []
+        for test in lamp_status_result:
+            for x in test:
+                lamp_status_list.append(x)
+        lamp_status = lamp_status_list[0]
 
-    return render_template('kamers.html')
+        if lamp_status == 1:
+            db.execute(query5)
+        else:
+            db.execute(query4)
+
+    return render_template('kamers.html', temp=tempwaarden, lichtwaarden=lichtwaarden)
 
 
-
-@app.route("/instellingen.html")
+@app.route("/instellingen")
 def instellingen():
     return render_template('instellingen.html')
 
 
-@app.route("/muziek.html")
+@app.route("/muziek")
 def muziek():
     return render_template('muziek.html')
 

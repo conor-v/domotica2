@@ -11,12 +11,17 @@
         <p>slaapkamer 1</p>
         <p>licht: {{ lichtwaarden[0] }}  %</p>
         <p>temp: {{ temp[0] }} °C</p>
+
+
         verlichting:
-{#        <form action="{{ drukknop_l }}" method="post">#}
-{#            <input type="button" placeholder="drukknop_l" name="drukknop_l"#}
-{#            value="{{ drukknop_l }}">#}
-{#        </form>#}
+
+        <form action="{{ url_for('sensoren') }}" method="post">
+            <input type="submit" name="light1" value="light">
+            <input type="hidden" value="1" name="button_id" >
+        </form>
     </div>
+
+
 
     <div class="garage-box">
         <img src="/static/img/garage.png" alt="garage foto" class="kamerfoto" width="127" height="77">
@@ -24,6 +29,11 @@
         <p>licht: {{ lichtwaarden[1] }} %</p>
         <p>temp: {{ temp[1] }} °C</p>
         verlichting:
+        <form action="{{ url_for('sensoren') }}" method="post">
+            <input type="submit" name="light2"
+            value="light">
+            <input type="hidden" value="2" name="button_id" >
+        </form>
         <br><br>
         garage-poort:
         <label class="switch">
@@ -38,7 +48,12 @@
          <p>bureau </p>
         <p>licht: {{ lichtwaarden[2] }} %</p>
         <p>temp: {{ temp[2] }} °C</p>
-        verlichting: <input type="button" onclick="" value="licht">
+        verlichting:
+     <form action="{{ url_for('sensoren') }}" method="post">
+            <input type="submit" name="light3"
+            value="light">
+            <input type="hidden" value="3" name="button_id" >
+        </form>
     </div>
 
      <div class="kamer-box">
@@ -46,7 +61,12 @@
          <p>slaapkamer 3</p>
         <p>licht: {{ lichtwaarden[3] }} %</p>
         <p>temp: {{ temp[3] }} °C</p>
-        verlichting: <input type="button" onclick="" value="licht">
+        verlichting:
+        <form action="{{ url_for('sensoren') }}" method="post">
+            <input type="submit" name="light4"
+            value="light">
+            <input type="hidden" value="4" name="button_id" >
+        </form>
     </div>
 
 {% endblock %}
